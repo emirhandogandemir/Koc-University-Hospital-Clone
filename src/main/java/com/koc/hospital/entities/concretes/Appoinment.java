@@ -45,6 +45,9 @@ public class Appoinment {
 	@NotNull
 	private String email;
 	
+	@Column(name="content")
+	private String content;
+	
 	@Column(name="appoinment_date")
 	@FutureOrPresent
 	private LocalDate appoinmentDate;
