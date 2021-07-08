@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +34,7 @@ public class Department {
 	private String name;
 	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="department")
+	@JsonIgnore
 	private List<Doctor> doctors;
 	
 	
