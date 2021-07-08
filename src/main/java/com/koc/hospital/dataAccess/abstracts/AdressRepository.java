@@ -12,4 +12,8 @@ public interface AdressRepository extends JpaRepository<Adress, Integer> {
 	
 	Adress getByCityName(String name);
 	
+	Adress getByStreetName(String name);
+	
+	Adress getByPostCode(int postCode);
+	
 }

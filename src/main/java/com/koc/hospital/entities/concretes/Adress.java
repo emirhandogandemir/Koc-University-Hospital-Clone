@@ -30,7 +30,7 @@ public class Adress {
 	private String districtName;
 	
 	@Column(name="street_name")
-	private String street_name;
+	private String streetName;
 	
 	@Column(name="building_number")
 	private short buildingNumber;

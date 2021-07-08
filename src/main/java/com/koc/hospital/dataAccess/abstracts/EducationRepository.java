@@ -11,5 +11,5 @@ public interface EducationRepository extends JpaRepository<Education, Integer> {
 	
 	Education getById(int id);
 	
-	Education getByName(String name);
+	Education getBySchoolName(String name);
 }
