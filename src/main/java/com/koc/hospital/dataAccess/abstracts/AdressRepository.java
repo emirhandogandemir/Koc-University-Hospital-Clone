@@ -8,5 +8,8 @@ import com.koc.hospital.entities.concretes.Adress;
 @Repository
 public interface AdressRepository extends JpaRepository<Adress, Integer> {
 
+	Adress getById(int id);
+	
+	Adress getByName(String name);
 	
 }

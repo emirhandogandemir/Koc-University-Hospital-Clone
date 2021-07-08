@@ -8,4 +8,8 @@ import com.koc.hospital.entities.concretes.Education;
 @Repository
 public interface EducationRepository extends JpaRepository<Education, Integer> {
 
+	
+	Education getById(int id);
+	
+	Education getByName(String name);
 }

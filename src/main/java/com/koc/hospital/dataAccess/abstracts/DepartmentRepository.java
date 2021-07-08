@@ -6,6 +6,10 @@ import org.springframework.stereotype.Repository;
 import com.koc.hospital.entities.concretes.Department;
 
 @Repository
-public interface DepartmentRepository extends JpaRepository<Department, Integer>{
+public interface DepartmentRepository extends JpaRepository<Department, Integer> {
+	
+	Department getById(int id);
 
+	Department getByName(String name);
+	
 }
