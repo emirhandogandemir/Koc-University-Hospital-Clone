@@ -20,5 +20,5 @@ public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 	
 	List<Doctor> getByAgeLessThan(int age);
 	
-	List<Doctor> findTop3ByAge();
+	//List<Doctor> findTop3ByAge(); // bunun kullanımında dbde hiç veri olmadığından kaynaklı exception yenildi dbde olunca açılacak
 }

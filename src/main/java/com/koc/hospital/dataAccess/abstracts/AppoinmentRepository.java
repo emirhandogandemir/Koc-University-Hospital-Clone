@@ -13,7 +13,7 @@ public interface AppoinmentRepository extends JpaRepository<Appoinment, Integer>
 
 	Appoinment findById(int id);
 	
-	List<Appoinment> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
+	//List<Appoinment> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
 	
 	List<Appoinment> findAllByOrderByDesc();
 	

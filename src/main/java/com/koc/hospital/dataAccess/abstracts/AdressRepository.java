@@ -10,6 +10,6 @@ public interface AdressRepository extends JpaRepository<Adress, Integer> {
 
 	Adress getById(int id);
 	
-	Adress getByName(String name);
+	Adress getByCityName(String name);
 	
 }

@@ -18,7 +18,7 @@ public interface AppoinmentService {
 	
 	DataResult<List<Appoinment>> getAll();
 	
-	DataResult<List<Appoinment>> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
+	//DataResult<List<Appoinment>> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
 
 	DataResult<List<Appoinment>> findAllByOrderByDesc();
 	
