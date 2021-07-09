@@ -2,6 +2,8 @@ package com.koc.hospital.business.abstracts;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+
 import com.koc.hospital.core.utilities.results.DataResult;
 import com.koc.hospital.core.utilities.results.Result;
 import com.koc.hospital.entities.concretes.Doctor;

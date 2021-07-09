@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "doctors"})
 public class Department {
 
 	@Id
@@ -33,8 +35,7 @@ public class Department {
 	@NotNull
 	private String name;
 	
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="department")
-	@JsonIgnore
+	@OneToMany(mappedBy="department")
 	private List<Doctor> doctors;
 	
 	

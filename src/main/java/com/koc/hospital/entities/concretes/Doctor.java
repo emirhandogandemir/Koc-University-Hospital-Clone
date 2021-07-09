@@ -57,7 +57,7 @@ public class Doctor {
 	@JoinColumn(name="gender_id",referencedColumnName = "id")
 	private Gender gender;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne()
 	@JoinColumn(name="department_id")
 	private Department department;
 	
