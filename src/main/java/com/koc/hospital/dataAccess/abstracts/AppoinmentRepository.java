@@ -11,7 +11,7 @@ import com.koc.hospital.entities.concretes.Appoinment;
 @Repository
 public interface AppoinmentRepository extends JpaRepository<Appoinment, Integer> {
 
-	Appoinment findById(int id);
+	Appoinment getById(int id);
 	
 	//List<Appoinment> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
 	

@@ -15,6 +15,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,7 +33,7 @@ public class Gender {
 	private String name;
 	
 	@OneToOne(mappedBy="gender")
-	@JsonIgnore
+//	@JsonIgnore
 	private Doctor doctor;
 	
 	@OneToOne(mappedBy="gender")
