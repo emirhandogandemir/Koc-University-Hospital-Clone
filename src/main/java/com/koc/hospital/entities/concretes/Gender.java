@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @Table(name="genders")
 @Entity
-@JsonIgnoreProperties (value = { "hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Gender {
 
 	@Id
@@ -34,12 +34,6 @@ public class Gender {
 	@Size(min=3)
 	private String name;
 	
-	@JsonIgnore
-	@OneToOne(mappedBy="gender")
-	private Doctor doctor;
 	
-	@JsonIgnore
-	@OneToOne(mappedBy="gender")
-	private Patient patient;
 	
 }

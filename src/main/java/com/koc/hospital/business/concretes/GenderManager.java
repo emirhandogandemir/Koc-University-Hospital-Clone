@@ -43,7 +43,7 @@ public class GenderManager implements GenderService {
 
 	@Override
 	public DataResult<Gender> getById(int id) {
-	return new SuccessDataResult<Gender>(this.genderRepository.getById(id));
+	return new SuccessDataResult<Gender>(this.genderRepository.getById(id),"idye göre getir");
 	}
 
 	@Override

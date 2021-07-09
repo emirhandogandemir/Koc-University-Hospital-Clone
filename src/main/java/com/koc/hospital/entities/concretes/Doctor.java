@@ -1,5 +1,6 @@
 package com.koc.hospital.entities.concretes;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,9 +31,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="doctors")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "adress"})
 
-public class Doctor {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "educations"})
+public class Doctor implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -67,7 +68,9 @@ public class Doctor {
 	@JoinColumn(name="department_id")
 	private Department department;
 	
-	@ManyToMany
+	
+	@ManyToMany()
+
 	@JoinTable(
 			name="doctor_educations"
 			,joinColumns=@JoinColumn

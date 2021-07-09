@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name="addresses")
 @Entity
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "doctor"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Adress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -46,12 +46,5 @@ public class Adress {
 	@Column(name="post_code")
 	private int postCode;
 	
-	@OneToOne(mappedBy="adress")
-	@JsonIgnore
-	private Doctor doctor;
-	
-	@OneToOne(mappedBy="adress")
-	@JsonIgnore
-	private Patient patient;
 	
 }

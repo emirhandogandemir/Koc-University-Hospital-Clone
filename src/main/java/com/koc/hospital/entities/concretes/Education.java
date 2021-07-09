@@ -1,10 +1,12 @@
 package com.koc.hospital.entities.concretes;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -25,9 +27,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "doctors"})
-public class Education {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "doctors"})
+public class Education{
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -48,8 +51,10 @@ public class Education {
     @Min(1950)
     private int graduationYear;
     
+    
+	
     @ManyToMany(mappedBy="educations")
- 
+
     private Set<Doctor> doctors = new HashSet<>();
     
     
