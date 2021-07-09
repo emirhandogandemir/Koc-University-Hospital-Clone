@@ -37,7 +37,7 @@ public class GenderManager implements GenderService {
 
 	@Override
 	public Result delete(int id) {
-		this.genderRepository.deleteById(null);
+		this.genderRepository.deleteById(id);
 		return new SuccessResult ("Cinsiyet silindi");
 	}
 

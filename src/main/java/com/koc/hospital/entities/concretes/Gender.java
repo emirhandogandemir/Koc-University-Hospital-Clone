@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
@@ -22,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NoArgsConstructor
 @Table(name="genders")
 @Entity
+@JsonIgnoreProperties (value = { "hibernateLazyInitializer", "handler"})
 public class Gender {
 
 	@Id
@@ -32,12 +34,12 @@ public class Gender {
 	@Size(min=3)
 	private String name;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy="gender")
-//	@JsonIgnore
 	private Doctor doctor;
 	
-	@OneToOne(mappedBy="gender")
 	@JsonIgnore
+	@OneToOne(mappedBy="gender")
 	private Patient patient;
 	
 }

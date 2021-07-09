@@ -43,7 +43,7 @@ public class GendersController {
 		return ResponseEntity.ok(this.genderService.update(gender));
 	}
 	
-	@DeleteMapping("delete")
+	@PostMapping("delete")
 	public Result delete(@RequestParam int id) {
 		return this.genderService.delete(id);
 	}

@@ -52,12 +52,12 @@ public class Patient{
 	@Min(10)
 	private String telephoneNumber;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="address_id")
+	@OneToOne()
+	@JoinColumn(name="address_id",referencedColumnName="id")
 	private Adress adress;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="gender_id")
+	@OneToOne()
+	@JoinColumn(name="gender_id",referencedColumnName="id")
 	private Gender gender;
 	
 }

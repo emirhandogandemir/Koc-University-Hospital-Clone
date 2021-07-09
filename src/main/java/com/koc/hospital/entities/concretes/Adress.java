@@ -47,6 +47,7 @@ public class Adress {
 	private int postCode;
 	
 	@OneToOne(mappedBy="adress")
+	@JsonIgnore
 	private Doctor doctor;
 	
 	@OneToOne(mappedBy="adress")

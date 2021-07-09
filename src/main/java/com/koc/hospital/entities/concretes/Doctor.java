@@ -19,6 +19,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,8 +58,9 @@ public class Doctor {
 	@JoinColumn(name="address_id")
 	private Adress adress;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="gender_id")
+	 
+	@OneToOne()
+	@JoinColumn(name="gender_id",referencedColumnName = "id")
 	private Gender gender;
 	
 	@ManyToOne()
