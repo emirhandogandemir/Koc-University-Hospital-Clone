@@ -53,4 +53,9 @@ public class EducationManager implements EducationService {
 		return new SuccessDataResult<Education> (this.educationRepository.getBySchoolName(name));
 	}
 
+	@Override
+	public DataResult<Education> getById(int id) {
+		return new SuccessDataResult<Education>(this.educationRepository.getById(id));
+	}
+
 }

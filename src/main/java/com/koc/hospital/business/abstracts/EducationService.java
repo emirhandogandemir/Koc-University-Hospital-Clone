@@ -13,6 +13,8 @@ public interface EducationService {
 	
 	Result delete(int id);
 	
+	DataResult<Education> getById(int id);
+	
 	DataResult<List<Education>> getAll();
 	
 	DataResult<Education> getBySchoolName(String name);
