@@ -45,7 +45,7 @@ public class AppoinmentManager implements AppoinmentService{
 
 	@Override
 	public DataResult<Appoinment> getById(int id) {
-		return new SuccessDataResult<Appoinment>(this.appoinmentRepository.getById(id));
+		return new SuccessDataResult<Appoinment>(this.appoinmentRepository.findById(id));
 	}
 
 	@Override

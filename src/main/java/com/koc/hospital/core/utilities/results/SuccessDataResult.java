@@ -1,7 +1,5 @@
 package com.koc.hospital.core.utilities.results;
 
-import com.koc.hospital.entities.concretes.Doctor;
-
 public class SuccessDataResult<T> extends DataResult<T>{
 
 	public SuccessDataResult(T data, String message) {

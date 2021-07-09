@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +25,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler", "doctors"})
 public class Education {
 
 	@Id
@@ -45,6 +49,7 @@ public class Education {
     private int graduationYear;
     
     @ManyToMany(mappedBy="educations")
+ 
     private Set<Doctor> doctors = new HashSet<>();
     
     

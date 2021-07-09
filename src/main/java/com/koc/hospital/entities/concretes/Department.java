@@ -36,6 +36,7 @@ public class Department {
 	private String name;
 	
 	@OneToMany(mappedBy="department")
+	@JsonIgnore
 	private List<Doctor> doctors;
 	
 	
