@@ -26,7 +26,13 @@ public class PatientManager implements PatientService {
 
 	@Override
 	public Result add(Patient patient) {
-	this.patientRepository.save(patient);
+		String cityName=patient.getAdress().getCityName().toUpperCase();
+		String name=patient.getName().toUpperCase();
+		String surname=patient.getSurname().toUpperCase();
+		patient.getAdress().setCityName(cityName);
+		patient.setName(name);
+		patient.setSurname(surname);
+		this.patientRepository.save(patient);
 	return new SuccessResult("Hasta ekleme başarılı");
 	}
 
