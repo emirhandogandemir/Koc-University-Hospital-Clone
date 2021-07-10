@@ -57,7 +57,7 @@ public class Doctor implements Serializable{
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="address_id",referencedColumnName = "id")
-	private Adress adress;
+	private Address adress;
 	
 	 
 	@OneToOne(cascade = {CascadeType.ALL})

@@ -5,26 +5,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.koc.hospital.business.abstracts.AdressService;
+import com.koc.hospital.business.abstracts.AddressService;
 import com.koc.hospital.core.utilities.results.DataResult;
 import com.koc.hospital.core.utilities.results.Result;
 import com.koc.hospital.core.utilities.results.SuccessDataResult;
 import com.koc.hospital.core.utilities.results.SuccessResult;
-import com.koc.hospital.dataAccess.abstracts.AdressRepository;
-import com.koc.hospital.entities.concretes.Adress;
+import com.koc.hospital.dataAccess.abstracts.AddressRepository;
+import com.koc.hospital.entities.concretes.Address;
 @Service
-public class AdressManager implements AdressService {
+public class AddressManager implements AddressService {
 
-	private AdressRepository adressRepository;
+	private AddressRepository adressRepository;
 	
 	@Autowired
-	public AdressManager(AdressRepository adressRepository) {
+	public AddressManager(AddressRepository adressRepository) {
 		super();
 		this.adressRepository = adressRepository;
 	}
 
 	@Override
-	public Result add(Adress adress) {
+	public Result add(Address adress) {
 		String cityName=adress.getCityName().toUpperCase();
 		String district=adress.getDistrictName().toUpperCase();
 		String streetName=adress.getStreetName().toUpperCase();
@@ -43,35 +43,35 @@ return new SuccessResult("Adress eklendi");
 	}
 
 	@Override
-	public Result update(Adress adress) {
+	public Result update(Address adress) {
 		this.adressRepository.save(adress);
 		return new SuccessResult("Adress güncellendi");
 	}
 
 	@Override
-	public DataResult<Adress> getById(int id) {
-		return new SuccessDataResult<Adress>(this.adressRepository.getById(id));
+	public DataResult<Address> getById(int id) {
+		return new SuccessDataResult<Address>(this.adressRepository.getById(id));
 	}
 
 	@Override
-	public DataResult<List<Adress>> getAll() {
-		return new SuccessDataResult<List<Adress>>(this.adressRepository.findAll());
+	public DataResult<List<Address>> getAll() {
+		return new SuccessDataResult<List<Address>>(this.adressRepository.findAll());
 		
 	}
 
 	@Override
-	public DataResult<Adress> getByCityName(String name) {
-		return new SuccessDataResult<Adress> (this.adressRepository.getByCityName(name.toUpperCase()));
+	public DataResult<Address> getByCityName(String name) {
+		return new SuccessDataResult<Address> (this.adressRepository.getByCityName(name.toUpperCase()));
 	}
 
 	@Override
-	public DataResult<Adress> getByStreetName(String name) {
-		return new SuccessDataResult<Adress>(this.adressRepository.getByStreetName(name.toUpperCase()));
+	public DataResult<Address> getByStreetName(String name) {
+		return new SuccessDataResult<Address>(this.adressRepository.getByStreetName(name.toUpperCase()));
 	}
 
 	@Override
-	public DataResult<Adress> getByPostCode(int postCode) {
-		return new SuccessDataResult<Adress> (this.adressRepository.getByPostCode(postCode));
+	public DataResult<Address> getByPostCode(int postCode) {
+		return new SuccessDataResult<Address> (this.adressRepository.getByPostCode(postCode));
 	}
 	
 

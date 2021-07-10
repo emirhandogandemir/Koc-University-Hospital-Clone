@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Table(name="addresses")
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Adress {
+public class Address {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
