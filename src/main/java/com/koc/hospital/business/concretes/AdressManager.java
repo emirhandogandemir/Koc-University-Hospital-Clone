@@ -25,6 +25,12 @@ public class AdressManager implements AdressService {
 
 	@Override
 	public Result add(Adress adress) {
+		String cityName=adress.getCityName().toUpperCase();
+		String district=adress.getDistrictName().toUpperCase();
+		String streetName=adress.getStreetName().toUpperCase();
+		adress.setCityName(cityName.toUpperCase());
+		adress.setDistrictName(district.toUpperCase());
+		adress.setStreetName(streetName.toUpperCase());
 	this.adressRepository.save(adress);
 	
 return new SuccessResult("Adress eklendi");
@@ -44,7 +50,7 @@ return new SuccessResult("Adress eklendi");
 
 	@Override
 	public DataResult<Adress> getById(int id) {
-	return new SuccessDataResult<Adress>(this.adressRepository.getById(id));
+		return new SuccessDataResult<Adress>(this.adressRepository.getById(id));
 	}
 
 	@Override
@@ -55,17 +61,18 @@ return new SuccessResult("Adress eklendi");
 
 	@Override
 	public DataResult<Adress> getByCityName(String name) {
-		return new SuccessDataResult<Adress> (this.adressRepository.getByCityName(name));
+		return new SuccessDataResult<Adress> (this.adressRepository.getByCityName(name.toUpperCase()));
 	}
 
 	@Override
 	public DataResult<Adress> getByStreetName(String name) {
-	return new SuccessDataResult<Adress>(this.adressRepository.getByStreetName(name));
+		return new SuccessDataResult<Adress>(this.adressRepository.getByStreetName(name.toUpperCase()));
 	}
 
 	@Override
 	public DataResult<Adress> getByPostCode(int postCode) {
 		return new SuccessDataResult<Adress> (this.adressRepository.getByPostCode(postCode));
 	}
+	
 
 }

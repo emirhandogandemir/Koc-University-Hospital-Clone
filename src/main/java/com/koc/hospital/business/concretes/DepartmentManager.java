@@ -27,6 +27,8 @@ public class DepartmentManager implements DepartmentService {
 	
 	@Override
 	public Result add(Department department) {
+		String departmentName=department.getName().toUpperCase();
+		department.setName(departmentName);
 		this.departmentRepository.save(department);
 		return new SuccessResult("Bölüm eklendi");
 	}
@@ -58,7 +60,7 @@ public class DepartmentManager implements DepartmentService {
 
 	@Override
 	public DataResult<Department> getByName(String name) {
-	return new SuccessDataResult<Department>(this.departmentRepository.getByName(name));
+	return new SuccessDataResult<Department>(this.departmentRepository.getByName(name.toUpperCase())); 
 	}
 
 }

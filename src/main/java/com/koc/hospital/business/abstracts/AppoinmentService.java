@@ -1,6 +1,5 @@
 package com.koc.hospital.business.abstracts;
 
-import java.util.Date;
 import java.util.List;
 
 import com.koc.hospital.core.utilities.results.DataResult;

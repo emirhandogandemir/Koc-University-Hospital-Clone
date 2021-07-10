@@ -13,7 +13,6 @@ import com.koc.hospital.core.utilities.results.SuccessResult;
 import com.koc.hospital.dataAccess.abstracts.EducationRepository;
 import com.koc.hospital.entities.concretes.Education;
 
-import net.bytebuddy.asm.Advice.This;
 @Service
 public class EducationManager implements EducationService {
 
