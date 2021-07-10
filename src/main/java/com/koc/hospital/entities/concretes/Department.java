@@ -34,8 +34,7 @@ public class Department {
 	@NotNull
 	private String name;
 	
-	@OneToMany(mappedBy="department")
-	@JsonIgnore
+	@OneToMany(mappedBy="department",fetch = FetchType.LAZY)
 	private List<Doctor> doctors;
 	
 	
