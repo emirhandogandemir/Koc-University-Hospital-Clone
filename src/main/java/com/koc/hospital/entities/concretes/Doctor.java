@@ -32,7 +32,7 @@ import lombok.NoArgsConstructor;
 @Table(name="doctors")
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "educations"})
-public class Doctor implements Serializable{
+public class Doctor implements Serializable{ 
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
