@@ -56,11 +56,11 @@ public class Doctor implements Serializable{
 	private String telephoneNumber;
 	
 	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="address_id")
+	@JoinColumn(name="address_id",referencedColumnName = "id")
 	private Adress adress;
 	
 	 
-	@OneToOne()
+	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="gender_id",referencedColumnName = "id")
 	private Gender gender;
 	
