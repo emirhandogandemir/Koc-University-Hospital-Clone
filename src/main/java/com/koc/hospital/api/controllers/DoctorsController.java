@@ -15,13 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.ResponseEntity;
 
 import com.koc.hospital.business.abstracts.DoctorService;
 import com.koc.hospital.core.utilities.results.DataResult;
 import com.koc.hospital.core.utilities.results.Result;
-import com.koc.hospital.core.utilities.results.SuccessDataResult;
-import com.koc.hospital.core.utilities.results.SuccessResult;
 import com.koc.hospital.entities.concretes.Doctor;
 
 @RestController

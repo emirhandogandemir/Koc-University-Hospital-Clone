@@ -17,7 +17,6 @@ import com.koc.hospital.business.abstracts.EducationService;
 import com.koc.hospital.core.utilities.results.DataResult;
 import com.koc.hospital.core.utilities.results.Result;
 import com.koc.hospital.entities.concretes.Education;
-import com.koc.hospital.entities.concretes.Gender;
 
 @RestController
 @RequestMapping("/api/education/")

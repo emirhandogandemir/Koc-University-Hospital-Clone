@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.koc.hospital.business.abstracts.AdressService;
 import com.koc.hospital.core.utilities.results.DataResult;
-import com.koc.hospital.core.utilities.results.SuccessDataResult;
 import com.koc.hospital.entities.concretes.Adress;
 
 @RestController
