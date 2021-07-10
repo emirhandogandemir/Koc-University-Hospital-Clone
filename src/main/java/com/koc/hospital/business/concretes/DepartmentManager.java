@@ -60,7 +60,7 @@ public class DepartmentManager implements DepartmentService {
 
 	@Override
 	public DataResult<Department> getByName(String name) {
-	return new SuccessDataResult<Department>(this.departmentRepository.getByName(name.toUpperCase()));
+	return new SuccessDataResult<Department>(this.departmentRepository.getByName(name.toUpperCase())); 
 	}
 
 }
