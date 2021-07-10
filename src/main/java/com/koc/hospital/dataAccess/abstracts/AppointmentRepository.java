@@ -5,18 +5,18 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.koc.hospital.entities.concretes.Appoinment;
+import com.koc.hospital.entities.concretes.Appointment;
 
 @Repository
-public interface AppoinmentRepository extends JpaRepository<Appoinment, Integer> {
+public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
 
-	Appoinment getById(int id);
+	Appointment getById(int id);
 	
 	//List<Appoinment> findAllByAppoinmentDate(Date appoinmentTimeStart, Date appoinmentTimeFinish);
 	
-	List<Appoinment> findAllByOrderByAppoinmentDateDesc();
+	List<Appointment> findAllByOrderByAppoinmentDateDesc();
 	
-	List<Appoinment> findAllByOrderByAppoinmentDateAsc();
+	List<Appointment> findAllByOrderByAppoinmentDateAsc();
 	
 	
 }

@@ -55,7 +55,7 @@ public class Patient{
 	
 	@OneToOne()
 	@JoinColumn(name="address_id",referencedColumnName="id")
-	private Adress adress;
+	private Address adress;
 	
 	@OneToOne()
 	@JoinColumn(name="gender_id",referencedColumnName="id")

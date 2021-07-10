@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.koc.hospital.business.abstracts.AppoinmentService;
+import com.koc.hospital.business.abstracts.AppointmentService;
 import com.koc.hospital.core.utilities.results.DataResult;
 import com.koc.hospital.core.utilities.results.Result;
-import com.koc.hospital.entities.concretes.Appoinment;
+import com.koc.hospital.entities.concretes.Appointment;
 
 @RestController
 @RequestMapping("/api/appoinment/")
 @CrossOrigin
-public class AppoinmentsController {
+public class AppointmentsController {
 
-	private AppoinmentService appoinmentService;
+	private AppointmentService appoinmentService;
 
 	@Autowired
-	public AppoinmentsController(AppoinmentService appoinmentService) {
+	public AppointmentsController(AppointmentService appoinmentService) {
 		super();
 		this.appoinmentService = appoinmentService;
 	}
 	
 	@PostMapping("add")
-	public ResponseEntity<?> add(@Valid @RequestBody Appoinment appoinment){
+	public ResponseEntity<?> add(@Valid @RequestBody Appointment appoinment){
 		return ResponseEntity.ok(this.appoinmentService.add(appoinment));
 	}
 	@PutMapping("update")
-	public ResponseEntity<?> update(@Valid @RequestBody Appoinment appoinment){
+	public ResponseEntity<?> update(@Valid @RequestBody Appointment appoinment){
 		return ResponseEntity.ok(this.appoinmentService.update(appoinment));
 	}
 	
@@ -50,21 +50,21 @@ public class AppoinmentsController {
 	}
 	
 	@GetMapping("getById")
-	public DataResult<Appoinment> getById(@RequestParam int id){
+	public DataResult<Appointment> getById(@RequestParam int id){
 		return this.appoinmentService.getById(id);
 	}
 	@GetMapping("getAll")
-	public DataResult<List<Appoinment>> getAll(){
+	public DataResult<List<Appointment>> getAll(){
 		return this.appoinmentService.getAll();
 	}
 	
 	@GetMapping("getAllByOrderDataDesc")
-	public DataResult<List<Appoinment>> findAllByOrderByDesc(){
+	public DataResult<List<Appointment>> findAllByOrderByDesc(){
 		return this.appoinmentService.findAllByOrderByDesc();
 	}
 	
 	 @GetMapping("getAllByOrderByAsc")
-	 public DataResult<List<Appoinment>> findAllByOrderByAsc(){
+	 public DataResult<List<Appointment>> findAllByOrderByAsc(){
 		 return this.appoinmentService.findAllByOrderByAsc();
 	 }
 	

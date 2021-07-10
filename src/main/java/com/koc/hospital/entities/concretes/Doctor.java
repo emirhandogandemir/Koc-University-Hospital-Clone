@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -56,7 +57,7 @@ public class Doctor implements Serializable{
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="address_id",referencedColumnName = "id")
-	private Adress adress;
+	private Address adress;
 	
 	 
 	@OneToOne(cascade = {CascadeType.ALL})
