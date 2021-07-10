@@ -7,8 +7,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,7 +22,7 @@ import com.koc.hospital.core.utilities.results.Result;
 import com.koc.hospital.entities.concretes.Patient;
 
 @RestController
-@RequestMapping("/api/patient")
+@RequestMapping("/api/patient/")
 @CrossOrigin
 public class PatientsController {
 
@@ -37,11 +39,11 @@ public class PatientsController {
 		return ResponseEntity.ok(this.patientService.add(patient));
 	}
 	
-	@PostMapping("update")
+	@PutMapping("update")
 	public ResponseEntity<?> update(@Valid @RequestBody Patient patient){
 		return ResponseEntity.ok(this.patientService.add(patient));
 	}
-	@PostMapping("delete")
+	@DeleteMapping("delete")
 	public Result delete(@RequestParam int id) {
 		return this.patientService.delete(id);
 	}
