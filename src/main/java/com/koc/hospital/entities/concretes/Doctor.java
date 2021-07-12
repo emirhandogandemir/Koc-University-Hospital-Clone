@@ -68,6 +68,9 @@ public class Doctor implements Serializable{
 	@JoinColumn(name="department_id")
 	private Department department;
 	
+	@OneToOne()
+	@JoinColumn(name="image_id",referencedColumnName="id")
+	private Image image;
 	
 	@ManyToMany()
 

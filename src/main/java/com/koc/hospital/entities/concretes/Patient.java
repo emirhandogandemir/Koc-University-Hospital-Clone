@@ -61,4 +61,8 @@ public class Patient{
 	@JoinColumn(name="gender_id",referencedColumnName="id")
 	private Gender gender;
 	
+	@OneToOne()
+	@JoinColumn(name="image_id",referencedColumnName="id")
+	private Image image;
+	
 }
