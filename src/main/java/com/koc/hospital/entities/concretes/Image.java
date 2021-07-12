@@ -42,7 +42,6 @@ public class Image {
     
     @OneToOne(mappedBy="image")
     @JsonIgnore()
-    @JoinColumn(name = "patient_id",referencedColumnName="user_id")
     private Patient patient;
 	
 }
