@@ -57,7 +57,7 @@ public class PatientsController {
 		return this.patientService.getAll();
 	}
 	
-	@GetMapping("getByCityName") 
+	@GetMapping("getByName") 
 	public DataResult<Patient> getByName(@RequestParam String name){
 		return this.patientService.getByName(name);
 	}
