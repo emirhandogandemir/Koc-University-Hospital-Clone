@@ -34,6 +34,7 @@ public class Image {
     private String url;
 
     @Column(name = "uploaded_at" , columnDefinition = "Date default CURRENT_DATE")
+    @JsonIgnore
     private LocalDate uploadedAt;
 
     @OneToOne(mappedBy="image")
