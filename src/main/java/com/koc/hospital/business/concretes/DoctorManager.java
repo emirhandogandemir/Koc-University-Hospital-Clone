@@ -52,10 +52,7 @@ public class DoctorManager implements DoctorService {
 		return new SuccessDataResult<Doctor>(this.doctorRepository.getById(id));
 	}
 
-	@Override
-	public DataResult<List<Doctor>> getByGender_Id(int genderId) {
-		return new SuccessDataResult<List<Doctor>>(this.doctorRepository.getByGender_Id(genderId));
-	}
+
 
 	@Override
 	public DataResult<List<Doctor>> getByDepartment_Id(int departmentId) {

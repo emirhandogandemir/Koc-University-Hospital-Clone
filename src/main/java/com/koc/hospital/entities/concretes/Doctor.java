@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -55,14 +55,10 @@ public class Doctor{
 	@Column(name="telephone_number",nullable=false)
 	private String telephoneNumber;
 	
+	@JsonBackReference
 	@OneToOne(cascade = {CascadeType.MERGE},fetch = FetchType.LAZY)
 	@JoinColumn(name="address_id",referencedColumnName = "id")
 	private Address address;
-	
-	 
-	@OneToOne(cascade = {CascadeType.MERGE},fetch = FetchType.LAZY)
-	@JoinColumn(name="gender_id",referencedColumnName = "id")
-	private Gender gender;
 	
 	@ManyToOne()
 	@JoinColumn(name="department_id")

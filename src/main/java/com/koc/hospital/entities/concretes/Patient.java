@@ -57,9 +57,6 @@ public class Patient{
 	@JoinColumn(name="address_id",referencedColumnName="id")
 	private Address address;
 	
-	@OneToOne()
-	@JoinColumn(name="gender_id",referencedColumnName="id")
-	private Gender gender;
 	
 	@OneToOne()
 	@JoinColumn(name="image_id",referencedColumnName="id")

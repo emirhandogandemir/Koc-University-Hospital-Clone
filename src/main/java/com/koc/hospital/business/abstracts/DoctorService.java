@@ -19,7 +19,7 @@ public interface DoctorService {
 	
 	DataResult<Doctor> getById(int id);
 	
-	DataResult<List<Doctor>> getByGender_Id(int genderId);
+
 	
 	DataResult<List<Doctor>> getByDepartment_Id(int departmentId);
 	

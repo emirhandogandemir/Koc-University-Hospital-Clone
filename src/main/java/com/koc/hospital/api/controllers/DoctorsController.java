@@ -60,11 +60,6 @@ public class DoctorsController {
 		return this.doctorService.getAll();
 	}
 
-	@GetMapping("getByGenderId")
-	public DataResult<List<Doctor>> getByGender_Id(@RequestParam int genderId) {
-		return this.doctorService.getByGender_Id(genderId);
-	}
-
 	@GetMapping("getByDepartmentId")
 	public DataResult<List<Doctor>> getByDepartment_Id(@RequestParam int departmentId) {
 		return this.doctorService.getByDepartment_Id(departmentId);

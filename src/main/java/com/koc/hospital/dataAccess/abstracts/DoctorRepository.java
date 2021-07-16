@@ -11,8 +11,7 @@ import com.koc.hospital.entities.concretes.Doctor;
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 
 	Doctor getById(int id);
-	
-	List<Doctor> getByGender_Id(int genderId);
+
 	
 	List<Doctor> getByDepartment_Id(int departmentId);
 	
