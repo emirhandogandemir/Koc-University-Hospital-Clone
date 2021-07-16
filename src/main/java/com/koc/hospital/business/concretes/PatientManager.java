@@ -26,10 +26,10 @@ public class PatientManager implements PatientService {
 
 	@Override
 	public Result add(Patient patient) {
-		String cityName=patient.getAdress().getCityName().toUpperCase();
+		String cityName=patient.getAddress().getCityName().toUpperCase();
 		String name=patient.getName().toUpperCase();
 		String surname=patient.getSurname().toUpperCase();
-		patient.getAdress().setCityName(cityName);
+		patient.getAddress().setCityName(cityName);
 		patient.setName(name);
 		patient.setSurname(surname);
 		this.patientRepository.save(patient);

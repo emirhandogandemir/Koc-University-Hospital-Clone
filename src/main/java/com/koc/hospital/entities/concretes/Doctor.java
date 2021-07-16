@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ import lombok.NoArgsConstructor;
 @Table(name="doctors")
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "educations"})
-public class Doctor implements Serializable{ 
+public class Doctor{ 
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -54,12 +55,12 @@ public class Doctor implements Serializable{
 	@Column(name="telephone_number",nullable=false)
 	private String telephoneNumber;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = {CascadeType.MERGE},fetch = FetchType.LAZY)
 	@JoinColumn(name="address_id",referencedColumnName = "id")
-	private Address adress;
+	private Address address;
 	
 	 
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = {CascadeType.MERGE},fetch = FetchType.LAZY)
 	@JoinColumn(name="gender_id",referencedColumnName = "id")
 	private Gender gender;
 	

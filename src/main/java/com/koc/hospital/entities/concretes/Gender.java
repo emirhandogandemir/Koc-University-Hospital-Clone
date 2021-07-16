@@ -3,11 +3,14 @@ package com.koc.hospital.entities.concretes;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import lombok.Data;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -32,6 +35,16 @@ public class Gender {
 	@Size(min=3)
 	private String name;
 	
+	@OneToOne(
+		    mappedBy = "gender",
+		    orphanRemoval = true,
+		    cascade = CascadeType.ALL)
+		private Doctor doctor;
 	
+	@OneToOne(
+		    mappedBy = "gender",
+		    orphanRemoval = true,
+		    cascade = CascadeType.ALL)
+		private Patient patient;
 	
 }
